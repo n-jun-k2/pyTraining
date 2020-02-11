@@ -41,7 +41,9 @@ criterion = torch.nn.MSELoss(reduction='sum')
 optimizer = torch.optim.SGD(model.parameters(),lr=1e-4)
 
 for t in range(500):
+    #予測値
     y_pred = model(x)
+    #誤差関数
     loss = criterion(y_pred, y)
     if t % 100 == 99:
         print(t, loss.item())
