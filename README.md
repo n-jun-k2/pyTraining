@@ -1,0 +1,2 @@
+# pyTraining
+pyTorchの練習
