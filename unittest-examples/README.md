@@ -16,7 +16,7 @@
  そしてdiscoverサブコマンドを入力する事が可能。例では-vオプションもつけると実行されたテストが分かり易くなります。
 
 #### コマンド例：
-   $ python -m unittest discover -v
+  > $ python -m unittest discover -v
    <br> ・・・
 
 
@@ -27,3 +27,16 @@
 ### モック(テストダブル)
 テスト対象が別のコンポーネントに依存しているとテストが書きにくい場合があります。その場合依存しているコンポーネントを代替品に置き換えることでテストを書きやすくなります。
 その「代替品」は一般に「スタブ」「モック」、総称し「テストダブル」などと呼ばれています。※Python3.3以降から標準ライブラリにモックを作る為のパッケージの「unittest.mock」が追加。
+
+#### コマンド例:
+ > from unittest import mock
+
+ >  #モックが呼び出された時は100を返す。<br>
+ $ mock_obj = mock.Mock(return_value=100)<br>
+ $ mock_obj()<br>
+ 100
+
+ > #モックに変数を追加。<br>
+ $ mock_obj.name = 'Foo'<br>
+ $ mock_obj.name<br>
+ 'Foo'
